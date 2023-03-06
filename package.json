@@ -1,0 +1,28 @@
+{
+  "name": "@deposits/payouts-sdk",
+  "version": "0.0.0",
+  "description": "Deposits Payouts SDKs provides and embeddable payouts experience for your applications",
+  "main": "package/index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DepositsTeam/payouts-sdk.git"
+  },
+  "keywords": [
+    "Deposits",
+    "payouts",
+    "fintecth",
+    "sdk"
+  ],
+  "author": "Deposits",
+  "license": "BSL-1.0",
+  "bugs": {
+    "url": "https://github.com/DepositsTeam/payouts-sdk/issues"
+  },
+  "homepage": "https://github.com/DepositsTeam/payouts-sdk#readme",
+  "devDependencies": {
+    "prettier": "^2.8.4"
+  }
+}

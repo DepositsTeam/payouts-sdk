@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking v2</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+        *, body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html, body {
+            height: 100%;
+            background-color: #152733;
+            overflow: hidden;
+        }
+
+
+        .form-holder {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .form-holder .form-content {
+            position: relative;
+            text-align: center;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .form-content .form-items {
+            border: 3px solid #fff;
+            padding: 40px;
+            display: inline-block;
+            width: 100%;
+            min-width: 540px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            text-align: left;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .form-content h3 {
+            color: #fff;
+            text-align: left;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .form-content h3.form-title {
+            margin-bottom: 30px;
+        }
+
+        .form-content p {
+            color: #fff;
+            text-align: left;
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 20px;
+            margin-bottom: 30px;
+        }
+
+
+        .form-content label, .was-validated .form-check-input:invalid ~ .form-check-label, .was-validated .form-check-input:valid ~ .form-check-label {
+            color: #fff;
+        }
+
+        .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+            width: 100%;
+            padding: 9px 20px;
+            text-align: left;
+            border: 0;
+            outline: 0;
+            border-radius: 6px;
+            background-color: #fff;
+            font-size: 15px;
+            font-weight: 300;
+            color: #8D8D8D;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            /*margin-top: 16px;*/
+        }
+
+        .form-content textarea {
+            position: static !important;
+            width: 100%;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-align: left;
+            background-color: #fff;
+            border: 0;
+            font-size: 15px;
+            font-weight: 300;
+            color: #8D8D8D;
+            outline: none;
+            resize: none;
+            height: 120px;
+            -webkit-transition: none;
+            transition: none;
+            margin-bottom: 14px;
+        }
+
+        .form-content textarea:hover, .form-content textarea:focus {
+            border: 0;
+            background-color: #ebeff8;
+            color: #8D8D8D;
+        }
+
+        .mv-up {
+            margin-top: -9px !important;
+            margin-bottom: 8px !important;
+        }
+
+        .invalid-feedback {
+            color: #ff606e;
+        }
+
+        .valid-feedback {
+            color: #2acc80;
+        }
+
+        hr {
+            color: #ffffff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 3px;
+        }
+
+        .mt-2 {
+            margin-top: 2px;
+        }
+
+        .mt-1 {
+            margin-top: 1px;
+        }
+
+        .text-white {
+            color: #ffffff;
+        }
+
+        .link-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <p>Fill in the data below.</p>
+                    <hr>
+                    <form class="requires-validation credential-form" style="display: none;" novalidate>
+                        <div class="col-md-12 mb-3">
+                            <label for="public_key">Public Key</label>
+                            <input class="form-control" type="text" name="public_key" id="public_key"
+                                   placeholder="Public Key" required>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="entity_type">Entity Type</label>
+                            <select class="form-select" name="entity_type" id="entity_type" required>
+                                <option selected disabled value="">Select an option</option>
+                                <option value="business">Business Entity</option>
+                                <option value="user">User Entity</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="access_id">Access ID</label>
+                            <input class="form-control" type="text" name="access_id" id="access_id"
+                                   placeholder="Access ID" required>
+                        </div>
+
+                        <hr>
+                        <div class="form-button text-center">
+                            <button type="submit" class="btn btn-primary">Begin KYSync Sequence</button>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="#" class="text-white link-text link-btn">Use Link</a>
+                        </div>
+                    </form>
+                    <form class="requires-validation link-form" novalidate>
+                        <div class="col-md-12 mb-3">
+                            <label for="url">URL</label>
+                            <input class="form-control" type="url" name="url" id="url"
+                                   placeholder="URL" required>
+                        </div>
+
+                        <hr>
+                        <div class="form-button text-center">
+                            <button type="submit" class="btn btn-primary">Begin KYSync Sequence</button>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="#" class="text-white link-text credential-btn">Use Credentials</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="kysync.js"></script>
+<script src="banking-v2.js"></script>
+</body>
+</html>
