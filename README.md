@@ -42,7 +42,7 @@ The `DepositsPayouts` function accepts an argument, which is an object containin
 
 | Property         | Description                                                                                                                      |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `public_key`     | The public key of your teanant that can be found on the [console](https://dev.launch.new).                                       |
+| `public_key`     | The public key of your tenant that can be found on the [console](https://sandbox.launch.new).                                       |
 | `callback`       | A function that gets called when various events happen. The function would accept an object containing the event type and action |
 | `production_env` | A boolean flag that determines whether the SDK would run in our production or sandbox environment.                               |
 
